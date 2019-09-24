@@ -1,0 +1,22 @@
+// Global styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: unset;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+// Global classes
+
+.f-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
