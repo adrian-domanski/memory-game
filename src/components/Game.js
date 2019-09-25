@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import GameMedium from "./GameMedium";
+import GameOverModal from "./GameOverModal";
 
 export class Game extends Component {
   state = {
@@ -7,11 +8,17 @@ export class Game extends Component {
     isFlippedCard: false,
     firstCard: null,
     secondCard: null,
-    isBoardLock: false
+    isBoardLock: false,
+    maxPairs: null,
+    currentPairs: 0,
+    isGameOver: false
   };
 
   componentDidMount() {
     const cards = document.querySelectorAll(".memory-card");
+    // Amount of pairs to end game
+    this.setState({ maxPairs: cards.length / 2 });
+    // Add click event
     cards.forEach(card => {
       card.addEventListener("click", this.flipCard);
     });
@@ -58,7 +65,24 @@ export class Game extends Component {
     });
   };
 
+  checkScore = () => {
+    // Score ++
+    this.setState(prevState => ({
+      currentPairs: prevState.currentPairs + 1
+    }));
+
+    // Game over ?
+    const { maxPairs, currentPairs } = this.state;
+    if (currentPairs === maxPairs) {
+      setTimeout(() => {
+        this.setState({ isGameOver: true });
+      }, 1000);
+    }
+    console.log(this.state);
+  };
+
   disableCards = () => {
+    this.checkScore();
     this.state.firstCard.removeEventListener("click", this.flipCard);
     this.state.secondCard.removeEventListener("click", this.flipCard);
   };
@@ -83,7 +107,14 @@ export class Game extends Component {
     });
   };
   render() {
-    return <div className="game">{this.getCards()}</div>;
+    const { isGameOver } = this.state;
+    return (
+      <div className="game">
+        {this.getCards()}
+
+        {isGameOver ? <GameOverModal history={this.props.history} /> : null}
+      </div>
+    );
   }
 }
 

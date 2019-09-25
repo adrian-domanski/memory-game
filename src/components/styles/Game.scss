@@ -1,5 +1,4 @@
 body {
-  background: grey !important;
   height: 100vh !important;
   display: flex;
   justify-content: center;
@@ -7,7 +6,11 @@ body {
 }
 
 .memory-game {
-  border: 2px solid lime;
+  background: radial-gradient(
+    circle,
+    rgb(121, 155, 48) 0%,
+    rgb(89, 150, 73) 100%
+  );
   width: 640px;
   height: 640px;
   display: flex;
