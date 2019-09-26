@@ -11,7 +11,8 @@ body {
     rgb(121, 155, 48) 0%,
     rgb(89, 150, 73) 100%
   );
-  width: 640px;
+  width: 80vw;
+  max-width: 900px;
   height: 640px;
   display: flex;
   flex-wrap: wrap;
