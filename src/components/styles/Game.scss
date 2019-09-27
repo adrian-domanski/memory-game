@@ -1,5 +1,6 @@
 body {
-  height: 100vh !important;
+  height: 100vh;
+  min-height: 900px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,4 +56,51 @@ body {
 
 .memory-card.flip {
   transform: rotateY(180deg);
+}
+
+.game {
+  position: relative;
+}
+
+.game__score {
+  position: absolute;
+  bottom: -90px;
+  // width: 50px;
+  font-size: 3rem;
+  width: 400px;
+  text-align: center;
+  left: calc(50% - 200px);
+  font-weight: bold;
+  color: #73ff00;
+  text-shadow: 0 0 3px black;
+  letter-spacing: 2px;
+}
+
+.legend {
+  opacity: 0.9 !important;
+  max-width: 700px !important;
+
+  &__body {
+    font-size: 1.5rem;
+  }
+
+  .modal-title {
+    font-size: 2rem;
+  }
+}
+
+// Easy
+.easy {
+  .memory-card {
+    width: calc(33.333% - 10px);
+    height: calc(50% - 10px);
+  }
+}
+
+// Hard
+.hard {
+  .memory-card {
+    width: calc(25% - 10px);
+    height: calc(25% - 10px);
+  }
 }

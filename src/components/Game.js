@@ -1,5 +1,8 @@
 import React, { Component } from "react";
+
+import GameEasy from "./GameEasy";
 import GameMedium from "./GameMedium";
+import GameHard from "./GameHard";
 import GameOverModal from "./GameOverModal";
 
 export class Game extends Component {
@@ -11,7 +14,9 @@ export class Game extends Component {
     isBoardLock: false,
     maxPairs: null,
     currentPairs: 0,
-    isGameOver: false
+    isGameOver: false,
+    score: 0,
+    level: this.props.match.params.level
   };
 
   componentDidMount() {
@@ -67,6 +72,7 @@ export class Game extends Component {
 
   checkScore = () => {
     // Score ++
+    this.setState(prevState => ({ score: prevState.score + 1 }));
     this.setState(prevState => ({
       currentPairs: prevState.currentPairs + 1
     }));
@@ -90,6 +96,7 @@ export class Game extends Component {
   unFlipCards = () => {
     this.setState({ isBoardLock: true });
     setTimeout(() => {
+      this.setState(prevState => ({ score: prevState.score + 1 }));
       this.state.firstCard.classList.remove("flip");
       this.state.secondCard.classList.remove("flip");
       this.resetBoard();
@@ -97,7 +104,16 @@ export class Game extends Component {
   };
 
   getCards = () => {
-    return <GameMedium />;
+    switch (this.state.level) {
+      case "Łatwy":
+        return <GameEasy />;
+      case "Średni":
+        return <GameMedium />;
+      case "Trudny":
+        return <GameHard />;
+      default:
+        return <GameMedium />;
+    }
   };
 
   shuffle = () => {
@@ -107,11 +123,11 @@ export class Game extends Component {
     });
   };
   render() {
-    const { isGameOver } = this.state;
+    const { isGameOver, score } = this.state;
     return (
       <div className="game">
         {this.getCards()}
-
+        <div className="game__score">Liczba Prób: {score}</div>
         {isGameOver ? <GameOverModal history={this.props.history} /> : null}
       </div>
     );
