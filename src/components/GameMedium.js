@@ -1,70 +1,70 @@
 import React from "react";
 import "./styles/Game.scss";
 // Images
-import angular from "./styles/IMG/angular.svg";
-import backbone from "./styles/IMG/backbone.svg";
-import aurelia from "./styles/IMG/aurelia.svg";
-import ember from "./styles/IMG/ember.svg";
-import back_face from "./styles/IMG/js-badge.svg";
-import react from "./styles/IMG/react.svg";
-import vue from "./styles/IMG/vue.svg";
+import gloves from "./styles/IMG/items/gloves.png";
+import hat from "./styles/IMG/items/hat.png";
+import jeans from "./styles/IMG/items/jeans.png";
+import shoes from "./styles/IMG/items/shoes.png";
+import back_face from "./styles/IMG/back-face.png";
+import socks from "./styles/IMG/items/socks.png";
+import tshirt from "./styles/IMG/items/tshirt.png";
 
 export default function GameMedium() {
   return (
     <section className="memory-game">
-      <div className="memory-card" data-title="angular">
-        <img src={angular} alt="Angular" className="front-face" />
+      <div className="memory-card" data-title="gloves">
+        <img src={gloves} alt="gloves" className="front-face" />
         <img src={back_face} alt="Backface" className="back-face" />
       </div>
-      <div className="memory-card" data-title="backbone">
-        <img src={backbone} alt="Backbone" className="front-face" />
-        <img src={back_face} alt="Backface" className="back-face" />
-      </div>
-
-      <div className="memory-card" data-title="aurelia">
-        <img src={aurelia} alt="Aurelia" className="front-face" />
-        <img src={back_face} alt="Backface" className="back-face" />
-      </div>
-      <div className="memory-card" data-title="ember">
-        <img src={ember} alt="Ember" className="front-face" />
+      <div className="memory-card" data-title="hat">
+        <img src={hat} alt="hat" className="front-face" />
         <img src={back_face} alt="Backface" className="back-face" />
       </div>
 
-      <div className="memory-card" data-title="react">
-        <img src={react} alt="React" className="front-face" />
+      <div className="memory-card" data-title="jeans">
+        <img src={jeans} alt="jeans" className="front-face" />
         <img src={back_face} alt="Backface" className="back-face" />
       </div>
-      <div className="memory-card" data-title="vue">
-        <img src={vue} alt="vue" className="front-face" />
+      <div className="memory-card" data-title="shoes">
+        <img src={shoes} alt="shoes" className="front-face" />
+        <img src={back_face} alt="Backface" className="back-face" />
+      </div>
+
+      <div className="memory-card" data-title="socks">
+        <img src={socks} alt="socks" className="front-face" />
+        <img src={back_face} alt="Backface" className="back-face" />
+      </div>
+      <div className="memory-card" data-title="tshirt">
+        <img src={tshirt} alt="tshirt" className="front-face" />
         <img src={back_face} alt="Backface" className="back-face" />
       </div>
 
       {/* Pairs */}
 
-      <div className="memory-card" data-title="angular">
-        <img src={angular} alt="Angular" className="front-face" />
+      <div className="memory-card" data-title="gloves">
+        <img src={gloves} alt="gloves" className="front-face" />
         <img src={back_face} alt="Backface" className="back-face" />
       </div>
-      <div className="memory-card" data-title="backbone">
-        <img src={backbone} alt="Backbone" className="front-face" />
-        <img src={back_face} alt="Backface" className="back-face" />
-      </div>
-
-      <div className="memory-card" data-title="aurelia">
-        <img src={aurelia} alt="Aurelia" className="front-face" />
-        <img src={back_face} alt="Backface" className="back-face" />
-      </div>
-      <div className="memory-card" data-title="ember">
-        <img src={ember} alt="Ember" className="front-face" />
+      <div className="memory-card" data-title="hat">
+        <img src={hat} alt="hat" className="front-face" />
         <img src={back_face} alt="Backface" className="back-face" />
       </div>
 
-      <div className="memory-card" data-title="react">
-        <img src={react} alt="React" className="front-face" />
+      <div className="memory-card" data-title="jeans">
+        <img src={jeans} alt="jeans" className="front-face" />
         <img src={back_face} alt="Backface" className="back-face" />
       </div>
-      <div className="memory-card" data-title="vue">
-        <img src={vue} alt="vue" className="front-face" />
+      <div className="memory-card" data-title="shoes">
+        <img src={shoes} alt="shoes" className="front-face" />
+        <img src={back_face} alt="Backface" className="back-face" />
+      </div>
+
+      <div className="memory-card" data-title="socks">
+        <img src={socks} alt="socks" className="front-face" />
+        <img src={back_face} alt="Backface" className="back-face" />
+      </div>
+      <div className="memory-card" data-title="tshirt">
+        <img src={tshirt} alt="tshirt" className="front-face" />
         <img src={back_face} alt="Backface" className="back-face" />
       </div>
     </section>

@@ -12,9 +12,10 @@ body {
     rgb(121, 155, 48) 0%,
     rgb(89, 150, 73) 100%
   );
-  width: 80vw;
-  max-width: 900px;
-  height: 640px;
+  width: 800px;
+  height: 600px;
+  min-height: 600px;
+  max-height: 90vh;
   display: flex;
   flex-wrap: wrap;
   perspective: 1000px;
@@ -48,6 +49,11 @@ body {
     rgba(108, 184, 88, 1) 100%
   );
   backface-visibility: hidden;
+}
+
+.back-face {
+  padding: 30px 40px;
+  transform: scale(0.9);
 }
 
 .front-face {
@@ -91,6 +97,11 @@ body {
 
 // Easy
 .easy {
+  &.memory-game {
+    height: 500px;
+    width: 700px;
+    min-height: 400px;
+  }
   .memory-card {
     width: calc(33.333% - 10px);
     height: calc(50% - 10px);
@@ -99,6 +110,10 @@ body {
 
 // Hard
 .hard {
+  &.memory-game {
+    width: 800px;
+    min-height: 700px;
+  }
   .memory-card {
     width: calc(25% - 10px);
     height: calc(25% - 10px);

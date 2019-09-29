@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: url(./IMG/cursor.png), auto !important;
 }
 
 body {
@@ -12,7 +13,7 @@ body {
   -o-animation: 600s scroll infinite linear;
   -ms-animation: 600s scroll infinite linear;
   animation: 600s scroll infinite linear;
-  // background-position: bottom !important;
+
   background-repeat: repeat-x;
   background-color: #56ded7;
 }
